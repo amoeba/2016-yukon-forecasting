@@ -15,13 +15,6 @@ yuk <- read.csv("data/yukon.csv",
 # Plotting
 ##########
 
-ggplot(yuk, aes(year, mdj)) +
-  geom_point(shape = 1) +
-  geom_line() +
-  labs(x = "Year", y = "Median Run Timing (June)")
-
-ggsave("april_forecast/amatc_time_series.png", width = 8, height = 4)
-
 ggplot(yuk, aes(amatc, mdj)) +
   geom_point(shape = 1) +
   geom_vline(xintercept = yuk[which(yuk$year == 2016),"amatc"]) +

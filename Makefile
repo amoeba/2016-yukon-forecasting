@@ -1,7 +1,4 @@
-all: april_forecast/amatc_time_series.png april_forecast/mdj_against_amatc.png may_forecast/predictions.csv may_forecast/model_select.csv may_forecast/mdj_against_msstc.png may_forecast/mdj_against_pice.png
-
-april_forecast/amatc_time_series.png: data/yukon.csv
-	littler april_forecast/april_forecast.R
+all: april_forecast/mdj_against_amatc.png may_forecast/predictions.csv may_forecast/model_select.csv may_forecast/mdj_against_msstc.png may_forecast/mdj_against_pice.png
 
 april_forecast/mdj_against_amatc.png: data/yukon.csv
 	littler april_forecast/april_forecast.R
