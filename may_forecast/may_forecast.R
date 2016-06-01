@@ -29,19 +29,19 @@ ggplot(yuk, aes(pice, mdj)) +
 # 15%
 model_fifdj <- lm(fifdj ~ amatc + msstc + pice, data = subset(yuk, year < 2016))
 summary(model_fifdj)
-prediction_fifdj <- ceiling(predict(model_fifdj, newdata = yuk[yuk$year == 2016,]))
+prediction_fifdj <- floor(predict(model_fifdj, newdata = yuk[yuk$year == 2016,]))
 prediction_fifdj
 
 # 25%
 model_qdj <- lm(qdj ~ amatc + msstc + pice, data = subset(yuk, year < 2016))
 summary(model_qdj)
-prediction_qdj <- ceiling(predict(model_qdj, newdata = yuk[yuk$year == 2016,]))
+prediction_qdj <- floor(predict(model_qdj, newdata = yuk[yuk$year == 2016,]))
 prediction_qdj
 
 # 50%
 model_mdj <- lm(mdj ~ amatc + msstc + pice, data = subset(yuk, year < 2016))
 summary(model_mdj)
-prediction_mdj <- ceiling(predict(model_mdj, newdata = yuk[yuk$year == 2016,]))
+prediction_mdj <- floor(predict(model_mdj, newdata = yuk[yuk$year == 2016,]))
 prediction_mdj
 
 predictions <- data.frame(percentile = c("fifdj", "qdj", "mdj"),
