@@ -18,11 +18,14 @@ ggplot(yuk, aes(msstc, mdj)) +
   geom_vline(xintercept = yuk[which(yuk$year == 2016),"msstc"]) +
   labs(x = expression("MSSTC,"*~degree*"C"), y = "Median Run Timing (June)")
 
+ggsave("may_forecast/mdj_against_msstc.png", width = 7, height = 6)
+
 ggplot(yuk, aes(pice, mdj)) +
   geom_point() +
   geom_vline(xintercept = yuk[which(yuk$year == 2016),"pice"]) +
   labs(x = "Prop. Ice Cover", y = "Median Run Timing (June)")
 
+ggsave("may_forecast/mdj_against_pice.png", width = 7, height = 6)
 
 # Models
 
