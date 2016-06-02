@@ -14,3 +14,6 @@ may_forecast/mdj_against_msstc.png: data/yukon.csv
 
 may_forecast/mdj_against_pice.png: data/yukon.csv
 	littler may_forecast/may_forecast.R
+
+may_foreacst/logistic_curve.csv: may_forecast/predictions.csv
+	littler may_forecast/logistic_curve.R
