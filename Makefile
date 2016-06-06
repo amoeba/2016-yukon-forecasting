@@ -1,4 +1,4 @@
-all: april_forecast/mdj_against_amatc.png may_forecast/predictions.csv may_forecast/model_select.csv may_forecast/mdj_against_msstc.png may_forecast/mdj_against_pice.png
+all: april_forecast/mdj_against_amatc.png may_forecast/predictions.csv may_forecast/model_select.csv may_forecast/mdj_against_msstc.png may_forecast/mdj_against_pice.png daily_forecast/daily_forecast.png
 
 april_forecast/mdj_against_amatc.png: data/yukon.csv
 	littler april_forecast/april_forecast.R
@@ -17,3 +17,6 @@ may_forecast/mdj_against_pice.png: data/yukon.csv
 
 may_foreacst/logistic_curve.csv: may_forecast/predictions.csv
 	littler may_forecast/logistic_curve.R
+
+daily_forecast/daily_forecast.png: daily_forecast/daily_forecast.R data/inseason.csv may_forecast/predictions.csv may_forecast/logistic_curve.csv
+	littler daily_forecast/daily_forecast.R
