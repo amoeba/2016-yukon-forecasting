@@ -25,6 +25,7 @@ logi_rss <- function(pars) {
 
 optim_result <- optim(par = c(mu_i, s_i), fn = logi_rss)
 optim_result
+save("optim_result", file = "may_forecast/optim_result.RData")
 
 xrange <- -10:50
 cpue <- data.frame(day = xrange,
