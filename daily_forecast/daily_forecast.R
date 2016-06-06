@@ -22,6 +22,9 @@ estimated$pccpue <- estimated$ccpue / final_ccpue
 
 write.table(subset(estimated, day >= 1)$pccpue * 100, row.names = FALSE, col.names = FALSE, file = "daily_forecast/estimated.csv")
 
+# Subset the columns for later use
+estimated <- estimated[,c("day", "pccpue")]
+
 # Plot
 logistic_curve$date <- as.Date(logistic_curve$date)
 
