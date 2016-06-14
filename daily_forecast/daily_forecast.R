@@ -57,3 +57,16 @@ ggplot() +
         legend.title = element_blank())
 
 ggsave("daily_forecast/daily_forecast.png", width = 6, height = 3)
+
+# Chart 2: Finaly CPUE timer series
+final_cpue <- data.frame(day = inseason$day,
+                         estimate = inseason$ccpue / (logistic_curve[logistic_curve$day %in% inseason$day,"pccpue"] / 100))
+final_cpue$date <- as.Date(final_cpue$day, format = "%j", origin = as.Date("2016-05-31"))
+
+ggplot(final_cpue, aes(date, estimate)) +
+  geom_point() +
+  geom_line() +
+  labs(x = "Date", y = "Final CPUE Estimate") +
+  theme_bw()
+
+ggsave("daily_forecast/final_cpue.png", width = 6, height = 3)
