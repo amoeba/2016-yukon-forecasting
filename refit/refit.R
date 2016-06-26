@@ -40,9 +40,9 @@ for (i in seq_len(nrow(alternatives))) {
   estimated$date <- as.Date(estimated$day, format = "%j", origin = as.Date("2016-05-31"))
   estimated$pccpue <- estimated$pccpue * 100
 
-  estimated$alternative <- paste(alternatives[i,"mu"],  alternatives[i,"s"])
+  estimated$alternative <- paste("mu = ", alternatives[i,"mu"],  "s = ", alternatives[i,"s"])
   estimated$curve <- "Estimated"
-  cpue$alternative <- paste(alternatives[i,"mu"],  alternatives[i,"s"])
+  cpue$alternative <- paste("mu = ", alternatives[i,"mu"],  "s = ", alternatives[i,"s"])
   cpue$curve <- "Modeled"
 
   result <- rbind(result,
